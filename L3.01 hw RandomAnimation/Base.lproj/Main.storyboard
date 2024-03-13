@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ac-Cd-N2l">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ac-Cd-N2l" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="16" y="75" width="361" height="361"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Параметры" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POE-Qb-M29">
@@ -56,6 +56,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animatedSpringView" destination="5Ac-Cd-N2l" id="oA4-2X-bK0"/>
                         <outlet property="animationOptionsLabel" destination="POE-Qb-M29" id="vAq-MM-Wbs"/>
                         <outlet property="nextAnimationButton" destination="bmy-fW-9Ri" id="Bul-D8-WaD"/>
                     </connections>

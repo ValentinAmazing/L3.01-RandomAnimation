@@ -12,7 +12,7 @@ final class AnimaLib {
     let options = (
         force: 1.0..<5,
         duration: 0.5..<5,
-        delay: 0.0..<2,
+        delay: 0.0..<1,
         damping: 0.0..<1,
         velocity: 0.0..<1,
         rotate: -5.0..<5,
@@ -24,16 +24,28 @@ final class AnimaLib {
     //вероятно, надо подобрать, для каждой опции, оптимальные диапазоны анимации и задать их индивидуально
     let preSets = [
         (
-            name: "slideUP",
-            curve: "spring"
-        ),
-        (
             name: "zoomIn",
             curve: "easeOutQuin"
         ),
         (
             name: "flipX",
             curve: "easeInCirc"
+        ),
+        (
+            name: "squeeze",
+            curve: "easeOutBack"
+        ),
+        (
+            name: "morph",
+            curve: "easeInOutCirc"
+        ),
+        (
+            name: "swing",
+            curve: "easeInOutCirc"
+        ),
+        (
+            name: "shake",
+            curve: "easeInOutCirc"
         )
     ]
     

@@ -41,7 +41,7 @@ struct AnimationOption {
         )
     }
     
-    static func getRandomRoundedValue(in range: Range<Double>) -> Double {
+    private static func getRandomRoundedValue(in range: Range<Double>) -> Double {
         (Double.random(in: range) * 100).rounded() / 100
     }
 }

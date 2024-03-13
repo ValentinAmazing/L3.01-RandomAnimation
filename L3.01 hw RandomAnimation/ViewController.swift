@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SpringAnimation
 
 final class ViewController: UIViewController {
 
     @IBOutlet weak var animationOptionsLabel: UILabel!
     @IBOutlet weak var nextAnimationButton: UIButton!
+    @IBOutlet weak var animatedSpringView: SpringView!
     
     private var animationOption = AnimationOption.getRandomAnimation()
     
@@ -35,8 +37,15 @@ final class ViewController: UIViewController {
         dalay: \(animationOption.delay)
         """
         
+        animatedSpringView.animation = animationOption.name
+        animatedSpringView.curve = animationOption.curve
+        animatedSpringView.force = animationOption.force
+        animatedSpringView.duration = animationOption.duration
+        animatedSpringView.delay = animationOption.delay
         
-        //подготовка следующей анимации
+        animatedSpringView.animate()
+        
+        //следующая анимация
         animationOption = AnimationOption.getRandomAnimation()
         nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
     }
