@@ -7,13 +7,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+    @IBOutlet weak var animationOptionsLabel: UILabel!
+    @IBOutlet weak var nextAnimationButton: UIButton!
+    
+    private var animationOption = AnimationOption.getRandomAnimation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        nextAnimationButton.layer.borderWidth = 1
+        nextAnimationButton.layer.cornerRadius = 10
+        nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
     }
 
 
+    @IBAction func getAnimationButton(_ sender: UIButton) {
+        
+        //запуск анимации
+        
+        //подготовка следующей анимации
+        animationOption = AnimationOption.getRandomAnimation()
+        nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
+    }
 }
 
