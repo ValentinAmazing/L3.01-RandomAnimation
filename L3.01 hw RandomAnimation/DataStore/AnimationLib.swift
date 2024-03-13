@@ -22,7 +22,7 @@ final class AnimaLib {
     )
   
     //вероятно, надо подобрать, для каждой опции, оптимальные диапазоны анимации и задать их индивидуально
-    let sets = [
+    let preSets = [
         (
             name: "slideUP",
             curve: "spring"
@@ -30,6 +30,10 @@ final class AnimaLib {
         (
             name: "zoomIn",
             curve: "easeOutQuin"
+        ),
+        (
+            name: "flipX",
+            curve: "easeInCirc"
         )
     ]
     

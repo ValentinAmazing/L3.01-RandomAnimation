@@ -25,7 +25,16 @@ final class ViewController: UIViewController {
 
     @IBAction func getAnimationButton(_ sender: UIButton) {
         
-        //запуск анимации
+        //текущая анимация
+        animationOptionsLabel.text = """
+        preset: \(animationOption.name)
+        curve: \(animationOption.curve)
+        
+        force: \(animationOption.force)
+        duration: \(animationOption.duration)
+        dalay: \(animationOption.delay)
+        """
+        
         
         //подготовка следующей анимации
         animationOption = AnimationOption.getRandomAnimation()

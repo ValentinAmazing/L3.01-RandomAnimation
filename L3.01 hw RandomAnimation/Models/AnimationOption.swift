@@ -21,23 +21,27 @@ struct AnimationOption {
     let scale: Double //0...5
     
     static func getRandomAnimation() -> AnimationOption {
-        let animation = AnimaLib.shared.sets.randomElement() ?? AnimaLib.shared.sets[0]
+        let animation = AnimaLib.shared.preSets.randomElement() ?? AnimaLib.shared.preSets[0]
         let option = AnimaLib.shared.options
         
         return AnimationOption(
             name: animation.name,
             curve: animation.curve,
-
-            force: Double.random(in: option.force),
-            duration: Double.random(in: option.duration),
-            delay: Double.random(in: option.delay),
-
-            damping: Double.random(in: option.damping),
-            velocity: Double.random(in: option.velocity),
-            rotate: Double.random(in: option.rotate),
-            x: Double.random(in: option.x),
-            y: Double.random(in: option.y),
-            scale: Double.random(in: option.scale)
+            
+            force: getRandomRoundedValue(in: option.force),
+            duration: getRandomRoundedValue(in: option.duration),
+            delay: getRandomRoundedValue(in: option.delay),
+            
+            damping: getRandomRoundedValue(in: option.damping),
+            velocity: getRandomRoundedValue(in: option.velocity),
+            rotate: getRandomRoundedValue(in: option.rotate),
+            x: getRandomRoundedValue(in: option.x),
+            y: getRandomRoundedValue(in: option.y),
+            scale: getRandomRoundedValue(in: option.scale)
         )
+    }
+    
+    static func getRandomRoundedValue(in range: Range<Double>) -> Double {
+        (Double.random(in: range) * 100).rounded() / 100
     }
 }
