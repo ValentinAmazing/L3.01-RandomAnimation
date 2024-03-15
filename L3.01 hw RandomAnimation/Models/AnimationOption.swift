@@ -22,6 +22,16 @@ struct AnimationOption {
     let y: Double
     let scale: Double //0...5
     
+    
+    var getAnimationOptionsText: String {"""
+    preset: \(name)
+    curve: \(curve)
+    
+    force: \(force)
+    duration: \(duration)
+    dalay: \(delay)
+    """}
+    
     static func getRandomAnimation() -> AnimationOption {
         let animation = AnimaLib.shared.preSets.randomElement() ?? AnimaLib.shared.preSets[0]
         

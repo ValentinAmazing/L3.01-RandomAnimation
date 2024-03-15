@@ -42,14 +42,7 @@ final class ViewController: UIViewController {
 
 extension ViewController {
     private func runAnimation() {
-        animationOptionsLabel.text = """
-        preset: \(animationOption.name)
-        curve: \(animationOption.curve)
-        
-        force: \(animationOption.force)
-        duration: \(animationOption.duration)
-        dalay: \(animationOption.delay)
-        """
+        animationOptionsLabel.text = animationOption.getAnimationOptionsText
         
         animatedSpringView.animation = animationOption.name
         animatedSpringView.curve = animationOption.curve
