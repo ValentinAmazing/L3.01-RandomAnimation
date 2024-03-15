@@ -40,7 +40,7 @@
                                     <color key="baseForegroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="getAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txb-bD-jpo"/>
+                                    <action selector="runAnimationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEA-m9-RRZ"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -5,6 +5,8 @@
 //  Created by Valentin on 13.03.2024.
 //
 
+import SpringAnimation
+
 struct AnimationOption {
     let name: String
     let curve: String
@@ -22,6 +24,7 @@ struct AnimationOption {
     
     static func getRandomAnimation() -> AnimationOption {
         let animation = AnimaLib.shared.preSets.randomElement() ?? AnimaLib.shared.preSets[0]
+        
         let option = AnimaLib.shared.options
         
         return AnimationOption(

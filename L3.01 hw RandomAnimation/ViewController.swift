@@ -22,12 +22,26 @@ final class ViewController: UIViewController {
         nextAnimationButton.layer.borderWidth = 1
         nextAnimationButton.layer.cornerRadius = 10
         nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
+        
+        animatedSpringView.layer.cornerRadius = 10
+
+        runAnimation()
     }
 
 
-    @IBAction func getAnimationButton(_ sender: UIButton) {
+    @IBAction func runAnimationButton(_ sender: UIButton) {
         
         //текущая анимация
+        runAnimation()
+        
+        //следующая анимация
+        animationOption = AnimationOption.getRandomAnimation()
+        nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
+    }
+}
+
+extension ViewController {
+    private func runAnimation() {
         animationOptionsLabel.text = """
         preset: \(animationOption.name)
         curve: \(animationOption.curve)
@@ -44,10 +58,5 @@ final class ViewController: UIViewController {
         animatedSpringView.delay = animationOption.delay
         
         animatedSpringView.animate()
-        
-        //следующая анимация
-        animationOption = AnimationOption.getRandomAnimation()
-        nextAnimationButton.setTitle("Run \(animationOption.name)", for: .normal)
     }
 }
-
